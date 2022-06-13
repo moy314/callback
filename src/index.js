@@ -3,19 +3,23 @@ import './styles.css';
 
 //console.log("hola mundo");
 
-const heroeId = "capi";
+const heroeId1 = "capi";
 const heroeId2 = "iron";
 
 
-buscarHeroe(heroeId,(err,heroe)=>{
-    if(err){
+buscarHeroe(heroeId1,(err,heroe1)=>{
+    if(err){ return console.error(err); }
+    
 
-        console.error(err);
-    }
-    else{
-        console.info(heroe);
-    }
+    buscarHeroe(heroeId2,(err,heroe2) =>{
+        if(err){ return console.error(err); }
 
+        console.log(`enviando a ${heroe1.nombre} y ${ heroe2.nombre } a la mision`);
+    })
+
+    
 })
+
+console.log("fin del programa");
 
 
