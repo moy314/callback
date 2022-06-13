@@ -9,10 +9,22 @@ const heroeId2 = "iron";
 
 
 
-buscarHeroe(heroeId1).then(heroe  => {
+// buscarHeroe(heroeId1).then(heroe  => {
 
-    console.log(`enviando a ${heroe.nombre} a la misión`);
-});
+//     console.log(`enviando a ${heroe.nombre} a la misión`);
+// });
+
+//EJECUTAR PROMESAS EN PARALELO
+Promise.all(d[buscarHeroe(heroeI1),buscarHeroe(heroeId2)])
+    .then( ([heroe1,heroe2]) =>{
+    // console.log("promise.all",arr);
+    console.log(`enviando a ${heroe1.nombre} y ${heroe2.nombre} a la misión`);
+    
+})
+
+
+
+
 
 // buscarHeroe(heroeId1,(err,heroe1)=>{
 //     if(err){ return console.error(err); }
