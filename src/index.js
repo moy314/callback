@@ -15,11 +15,15 @@ const heroeId2 = "iron";
 // });
 
 //EJECUTAR PROMESAS EN PARALELO
-Promise.all(d[buscarHeroe(heroeI1),buscarHeroe(heroeId2)])
+Promise.all([buscarHeroe(heroeId1),buscarHeroe(heroeId2)])
     .then( ([heroe1,heroe2]) =>{
     // console.log("promise.all",arr);
-    console.log(`enviando a ${heroe1.nombre} y ${heroe2.nombre} a la misión`);
+    console.log(`enviando a ${heroe1.nombre} y ${heroe2.nombre} a la mision`);
     
+}).catch(err =>{
+    alert(err);
+}).finally(()=>{
+    console.log("se termino el primise. all");
 })
 
 
