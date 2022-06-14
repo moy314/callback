@@ -64,3 +64,25 @@ export {
     promesaRapida
     
 }
+
+
+//////////////////////////////////////ASYNC
+
+
+export const buscarHeroeAsync = async (id)=>{
+
+    const heroe = heroes[id];
+    
+
+        if (heroe){
+
+            return heroe;
+        }
+        else{
+            
+            throw `no existe un herore con el id ${id}`;
+        }
+
+    }
+
+
