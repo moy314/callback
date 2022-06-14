@@ -1,48 +1,10 @@
-import {buscarHeroe as buscarHeroeCallback} from './js/callbacks'
-import {buscarHeroe} from './js/promesas'
+import { promesaLenta,promesaMedia,promesaRapida } from './js/promesas';
 import './styles.css';
 
-//console.log("hola mundo");
 
-const heroeId1 = "capi";
-const heroeId2 = "iron";
+// promesaLenta.then(console.log);
+// promesaMedia.then(console.log);
+// promesaRapida.then(console.log);
 
-
-
-// buscarHeroe(heroeId1).then(heroe  => {
-
-//     console.log(`enviando a ${heroe.nombre} a la misión`);
-// });
-
-//EJECUTAR PROMESAS EN PARALELO
-Promise.all([buscarHeroe(heroeId1),buscarHeroe(heroeId2)])
-    .then( ([heroe1,heroe2]) =>{
-    // console.log("promise.all",arr);
-    console.log(`enviando a ${heroe1.nombre} y ${heroe2.nombre} a la mision`);
-    
-}).catch(err =>{
-    alert(err);
-}).finally(()=>{
-    console.log("se termino el primise. all");
-})
-
-
-
-
-
-// buscarHeroe(heroeId1,(err,heroe1)=>{
-//     if(err){ return console.error(err); }
-    
-
-//     buscarHeroe(heroeId2,(err,heroe2) =>{
-//         if(err){ return console.error(err); }
-
-//         console.log(`enviando a ${heroe1.nombre} y ${ heroe2.nombre } a la mision`);
-//     })
-
-    
-// })
-
-console.log("fin del programa");
-
-
+Promise.race([promesaLenta,promesaMedia,promesaRapida])
+        .then(console.log);
